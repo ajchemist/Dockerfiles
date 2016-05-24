@@ -1,11 +1,11 @@
 FROM java:openjdk-8-jre
 MAINTAINER aJchemist <valchemist@me.com>
 
-RUN cp /usr/share/zoneinfo/Asia/Seoul /etc/localtime; \
-    echo Asia/Seoul > /etc/zoneinfo; \
+RUN ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime && \
+    echo Asia/Seoul > /etc/zoneinfo                      && \
     echo Asia/Seoul > /etc/timezone;
 
-VOLUME ["/deploy"]
-WORKDIR /deploy
+VOLUME ["/srv"]
+WORKDIR /srv
 
 ENTRYPOINT ["java"]

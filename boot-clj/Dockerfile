@@ -1,4 +1,4 @@
-FROM ajchemist/java:openjdk-9-jre
+FROM ajchemist/java:openjdk-8-jre
 MAINTAINER aJchemist <valchemist@me.com>
 
 RUN curl -Lo /usr/local/bin/boot https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh; \
