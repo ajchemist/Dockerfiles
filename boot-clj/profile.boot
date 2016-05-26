@@ -11,15 +11,6 @@
          into '[cider.nrepl/cider-middleware
                 refactor-nrepl.middleware/wrap-refactor]))
 
-(set-env! :dependencies
-          #(into % '[[org.clojure/tools.namespace "0.2.11" :scope "test"]
-                     [turingmind.private/clojure "20160328" :scope "test"]]))
-
-(require '[clojure.tools.namespace.repl :as ns-repl])
-#_(apply ns-repl/set-refresh-dirs (get-env :directories))
-
-(use 'turingmind.clojure.core)
-
 ;; Local Variables:
 ;; mode: clojure
 ;; End:
