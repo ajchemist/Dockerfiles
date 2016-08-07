@@ -5,5 +5,4 @@ MAINTAINER aJchemist <alchemist@turingmind.com>
 RUN apk add --update tzdata                              && \
     ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime && \
     echo Asia/Seoul > /etc/timezone                      && \
-    date                                                 && \
     apk del tzdata

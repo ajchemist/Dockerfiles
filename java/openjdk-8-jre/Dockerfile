@@ -1,5 +1,5 @@
 FROM java:openjdk-8-jre
-MAINTAINER aJchemist <valchemist@me.com>
+MAINTAINER aJchemist <ajchemist@turingmind.com>
 
 RUN ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime && \
     echo Asia/Seoul > /etc/zoneinfo                      && \

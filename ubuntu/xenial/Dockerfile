@@ -11,5 +11,5 @@ ENV LANGUAGE C.UTF-8
 ENV LC_ALL   C.UTF-8
 
 RUN dpkg-reconfigure locales && \
-    /usr/sbin/update-locale LANG=C.UTF-8 LC_ALL=C.UTF-8 LC_MESSAGES=POSIX
+    /usr/sbin/update-locale LANG=C.UTF-8 LC_ALL=C.UTF-8 LC_MESSAGES=C.UTF-8
 
