@@ -32,3 +32,7 @@ pid="$!"
 mkdir -p /var/run/$DAEMON
 echo "${pid}" > /var/run/$DAEMON/$DAEMON.pid
 wait "${pid}" && exit $?
+
+if [ $# -gt 0 ]; then
+    exec "$@"
+fi

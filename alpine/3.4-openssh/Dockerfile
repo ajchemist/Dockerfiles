@@ -10,10 +10,10 @@ RUN mkdir -p /root/.ssh \
     && touch /root/.ssh/authorized_keys \
     && chmod 600 /root/.ssh/authorized_keys
 
-COPY bootstrap.sh sshd_entry.sh /
+COPY bootstrap.sh openssh_entry.sh /
 RUN chmod +x /bootstrap.sh
 RUN /bootstrap.sh
 
 EXPOSE 22
 
-ENTRYPOINT ["/sshd_entry.sh"]
+ENTRYPOINT ["/openssh_entry.sh"]
