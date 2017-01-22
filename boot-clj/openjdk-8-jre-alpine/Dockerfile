@@ -3,6 +3,8 @@ MAINTAINER aJchemist <ajchemist@turingmind.com>
 
 ARG BOOTCLJ_URL=https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh
 
+RUN apk add --update --no-cache bash curl
+
 RUN curl -Lo /usr/bin/boot ${BOOTCLJ_URL} \
     && chmod +x /usr/bin/boot;
 
