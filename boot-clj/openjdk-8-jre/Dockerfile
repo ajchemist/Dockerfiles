@@ -11,7 +11,7 @@ ENV BOOT_EMIT_TARGET no
 ENV BOOT_CLOJURE_NAME org.clojure/clojure
 ENV BOOT_HOME /.boot
 ENV BOOT_LOCAL_REPO /m2/repository
-ENV BOOT_JVM_OPTIONS=-Xmx2g
+ENV BOOT_JVM_OPTIONS="-XX:+TieredCompilation -XX:TieredStopAtLevel=1 -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xverify:none"
 
 # download & install deps, cache REPL and web deps
 # RUN /usr/bin/boot web -s doesnt/exist repl -e '(System/exit 0)' && rm -rf target
