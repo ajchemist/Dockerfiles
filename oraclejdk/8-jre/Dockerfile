@@ -29,4 +29,7 @@ ENV JAVA_HOME /opt/java
 # download & install deps, cache REPL and web deps
 # RUN /usr/bin/boot web -s doesnt/exist repl -e '(System/exit 0)' && rm -rf target
 
+VOLUME ["/srv"]
+WORKDIR /srv
+
 ENTRYPOINT ["/usr/bin/java"]
