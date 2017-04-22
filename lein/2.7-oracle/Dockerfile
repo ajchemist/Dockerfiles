@@ -1,8 +1,8 @@
 FROM ajchemist/oraclejdk:8
 MAINTAINER aJchemist "valchemist@me.com"
 
-ENV LEIN_VERSION=2.7.1
-ENV LEIN_INSTALL=/usr/local/bin/
+ENV LEIN_VERSION 2.7.1
+ENV LEIN_INSTALL /usr/local/bin/
 
 # Download the whole repo as an archive
 RUN mkdir -p $LEIN_INSTALL \

@@ -15,7 +15,7 @@ RUN apt-get update \
     && apt-get install -y curl wget openssl ca-certificates \
     && rm -rf /var/lib/apt/lists/* \
     && cd /tmp \
-    && wget -O jdk8.tar.gz \
+    && wget -q -O jdk8.tar.gz \
        --header "Cookie: oraclelicense=accept-securebackup-cookie" \
        ${ORACLE_JDK_URL} \
     && tar xzf jdk8.tar.gz -C /opt \
