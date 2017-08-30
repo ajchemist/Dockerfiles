@@ -24,6 +24,9 @@ env:
   - RDIR=debian TAG=stable-slim
   - RDIR=debian TAG=stretch
   - RDIR=debian TAG=stretch-slim
+  - RDIR=oraclejdk TAG=8-jre TAGS=( 8 8u144 ) LATEST=y
+  - RDIR=oraclejdk TAG=8-jre TAGS=( 8 8u144 ) VARIANT=slim
+  - RDIR=oraclejdk TAG=8-jre TAGS=( 8 8u144 ) VARIANT=alpine
 notifications:
   slack:
     rooms:

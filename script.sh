@@ -28,6 +28,8 @@ function docker_push()
     docker push $REPO
 }
 
+# * build
+
 case $RDIR in
     alpine)
         docker_build
@@ -38,4 +40,31 @@ case $RDIR in
         ;;
 esac
 
-docker_push
+if [ ! $? -eq 0 ]; then
+    echo FAILED ON BUILD STAGE
+    exit 1;
+fi
+
+# * test
+
+case $RDIR in
+    oraclejdk)
+        docker run --rm -it $REPO:$COMMIT -version
+        ;;
+    *)
+        ;;
+esac
+
+
+if [ ! $? -eq 0 ]; then
+    echo FAILED ON TEST STAGE
+    exit 1;
+fi
+
+# * push
+
+case $RDIR in
+    *)
+        docker_push
+        ;;
+esac
