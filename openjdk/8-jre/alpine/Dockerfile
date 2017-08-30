@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM openjdk:8u131-jre-alpine
 MAINTAINER aJchemist <ajchemist@turingmind.com>
 
 RUN apk add --no-cache --update tzdata \

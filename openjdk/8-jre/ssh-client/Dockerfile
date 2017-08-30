@@ -1,4 +1,4 @@
-FROM ajchemist/openjdk:8-jre
+FROM ajchemist/openjdk:8u141-jre-slim
 MAINTAINER aJchemist <ajchemist@turingmind.com>
 
 RUN apt-get update
