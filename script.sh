@@ -4,22 +4,28 @@ self="${BASH_SOURCE[0]}"
 selfdir="$(cd "$(dirname "${self}")"; pwd)"
 selfpath="$selfdir/$(basename "$self")"
 
+#
+# $TRAVIS_BUILD_NUMBER
+# $TRAVIS_JOB_ID
+# $TRAVIS_JOB_NUMBER
+
 function docker_build()
 {
     cd "${RDIR}/${TAG}${VARIANT:+/$VARIANT}"
 
     REPO="${DOCKER_HUB_USERNAME}/${RDIR}"
 
-    docker build -t $REPO:$COMMIT .
-    docker tag $REPO:$COMMIT $REPO:travis${TRAVIS_BUILD_NUMBER:+-$TRAVIS_BUILD_NUMBER}
-    docker tag $REPO:$COMMIT $REPO:$TAG${VARIANT:+-$VARIANT}
-    for _tag in ${TAGS[@]}
+    IMAGE="$REPO:travis${COMMIT:+-$COMMIT}${TRAVIS_JOB_NUMBER:+-$TRAVIS_JOB_NUMBER}"
+
+    docker build -t $IMAGE .
+    docker tag $IMAGE $REPO:$TAG${VARIANT:+-$VARIANT}
+    for _tag in ${TAGS}
     do
-        docker tag $REPO:$COMMIT $REPO:$_tag${VARIANT:+-$VARIANT}
+        docker tag $IMAGE $REPO:${_tag}${VARIANT:+-$VARIANT}
     done
     if [ ! -z $LATEST ]; then
         LATEST_TAG=$(if [ "$TRAVIS_BRANCH" == "master" ]; then echo latest; else echo $TRAVIS_BRANCH; fi)
-        docker tag $REPO:$COMMIT $REPO:$LATEST_TAG${VARIANT:+-$VARIANT}
+        docker tag $IMAGE $REPO:$LATEST_TAG${VARIANT:+-$VARIANT}
     fi
 }
 
@@ -30,11 +36,12 @@ function docker_push()
 
 # * build
 
+echo "******"
+echo "******" building...
+echo "******"
+
+
 case $RDIR in
-    alpine)
-        docker_build
-        VARIANT=openssh docker_build
-        ;;
     *)
         docker_build
         ;;
@@ -47,9 +54,13 @@ fi
 
 # * test
 
+echo "******"
+echo "******" testing...
+echo "******"
+
 case $RDIR in
     oraclejdk)
-        docker run --rm -it $REPO:$COMMIT -version
+        docker run --rm -it $IMAGE -version
         ;;
     *)
         ;;
@@ -62,6 +73,10 @@ if [ ! $? -eq 0 ]; then
 fi
 
 # * push
+
+echo "******"
+echo "******" pushing...
+echo "******"
 
 case $RDIR in
     *)
