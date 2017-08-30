@@ -18,6 +18,8 @@ function docker_build()
     IMAGE="$REPO:travis${COMMIT:+-$COMMIT}${TRAVIS_JOB_NUMBER:+-$TRAVIS_JOB_NUMBER}"
 
     docker build -t $IMAGE .
+
+    # tagging
     docker tag $IMAGE $REPO:$TAG${VARIANT:+-$VARIANT}
     for _tag in ${TAGS}
     do

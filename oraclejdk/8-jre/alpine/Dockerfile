@@ -6,14 +6,16 @@ ARG ORACLE_JDK_URL=http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390
 RUN apk add --no-cache --update wget \
     && cd /tmp \
     && wget -O jdk8.tar.gz \
+       --no-check-certificate \
        --header "Cookie: oraclelicense=accept-securebackup-cookie" \
        ${ORACLE_JDK_URL} \
+    && mkdir -p /opt \
     && tar xzf jdk8.tar.gz -C /opt \
     && mv /opt/jdk* /opt/java \
     && rm /tmp/jdk8.tar.gz \
-    && update-alternatives --install /usr/bin/java java /opt/java/bin/java 100 \
-    && update-alternatives --install /usr/bin/javac javac /opt/java/bin/javac 100
+    && install /opt/java/bin/java /usr/bin/java \
+    && install /opt/java/bin/javac /usr/bin/javac
 
 ENV JAVA_HOME /opt/java
 
-ENTRYPOINT ["/usr/bin/boot"]
+ENTRYPOINT ["/usr/bin/java"]
