@@ -17,13 +17,13 @@ function docker_build()
 
     IMAGE="$REPO:travis${COMMIT:+-$COMMIT}${TRAVIS_JOB_NUMBER:+-$TRAVIS_JOB_NUMBER}"
 
-    docker build -t $IMAGE .
+    docker build -t $IMAGE${BUILD_ARGS:+ $BUILD_ARGS} .
 
     # tagging
-    docker tag $IMAGE $REPO:$TAG${VARIANT:+-$VARIANT}
+    docker tag $IMAGE $REPO:${TAG_PREFIX:+$TAG_PREFIX-}$TAG${VARIANT:+-$VARIANT}${TAG_SUFFIX:+-$TAG_SUFFIX}
     for _tag in ${TAGS}
     do
-        docker tag $IMAGE $REPO:${_tag}${VARIANT:+-$VARIANT}
+        docker tag $IMAGE $REPO:${TAG_PREFIX:+$TAG_PREFIX-}${_tag}${VARIANT:+-$VARIANT}${TAG_SUFFIX:+-$TAG_SUFFIX}
     done
     if [ ! -z $LATEST ]; then
         LATEST_TAG=$(if [ "$TRAVIS_BRANCH" == "master" ]; then echo latest; else echo $TRAVIS_BRANCH; fi)

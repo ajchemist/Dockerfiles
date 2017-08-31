@@ -1,6 +1,8 @@
 FROM openjdk:8u131-jre-alpine
 MAINTAINER aJchemist <ajchemist@turingmind.com>
 
+# https://hub.docker.com/_/openjdk/
+
 RUN apk add --no-cache --update tzdata \
     && cp /usr/share/zoneinfo/Asia/Seoul /etc/localtime \
     && echo Asia/Seoul > /etc/timezone \

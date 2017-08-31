@@ -1,13 +1,10 @@
-FROM ajchemist/openjdk:8u141
-MAINTAINER aJchemist "ajchemist@turingmind.com"
+FROM ajchemist/oraclejdk:8u144-slim
+MAINTAINER aJchemist <ajchemist@turingmind.com>
 
 ARG BOOT_VERSION=2.7.2
 ARG BOOT_CHECKSUM=f717ef381f2863a4cad47bf0dcc61e923b3d2afb
 
 ENV BOOT_VERSION ${BOOT_VERSION}
-
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends curl
 
 RUN curl -Lo /usr/bin/boot https://github.com/boot-clj/boot-bin/releases/download/${BOOT_VERSION}/boot.sh \
     && echo "Comparing installer checksum..." \

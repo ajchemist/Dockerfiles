@@ -5,7 +5,7 @@ ARG ORACLE_JDK_URL=http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390
 
 RUN apk add --no-cache --update wget \
     && cd /tmp \
-    && wget -O jdk8.tar.gz \
+    && wget -q -O jdk8.tar.gz \
        --no-check-certificate \
        --header "Cookie: oraclelicense=accept-securebackup-cookie" \
        ${ORACLE_JDK_URL} \
