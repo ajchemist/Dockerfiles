@@ -1,3 +1,16 @@
 ** References
 
+*** docker
+
 - https://docs.docker.com/engine/reference/commandline/build/
+
+*** docker-library
+
+- https://hub.docker.com/r/library/debian/
+- https://hub.docker.com/r/library/alpine/
+- https://hub.docker.com/r/library/openjdk/
+- https://hub.docker.com/r/library/clojure/
+
+# Local Variables:
+# mode: org
+# End:
