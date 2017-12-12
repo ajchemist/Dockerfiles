@@ -1,4 +1,4 @@
-FROM ajchemist/oraclejdk:8u144-slim
+FROM ajchemist/oraclejdk:8u152-slim
 MAINTAINER aJchemist "valchemist@me.com"
 
 # https://github.com/Quantisan/docker-clojure/blob/master/debian/lein/Dockerfile

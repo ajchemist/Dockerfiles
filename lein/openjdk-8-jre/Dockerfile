@@ -1,4 +1,4 @@
-FROM ajchemist/openjdk:8u141
+FROM ajchemist/openjdk:8u151
 MAINTAINER aJchemist "valchemist@me.com"
 
 # https://github.com/Quantisan/docker-clojure/blob/master/debian/lein/Dockerfile

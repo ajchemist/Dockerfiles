@@ -41,10 +41,10 @@ env:
   - RDIR=boot-clj TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u151" VARIANT=slim   TAG_PREFIX=2.7.2 BUILD_ARGS="--build-arg BOOT_VERSION=2.7.2 --build-arg BOOT_CHECKSUM=f717ef381f2863a4cad47bf0dcc61e923b3d2afb"
   - RDIR=boot-clj TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u151" VARIANT=alpine TAG_PREFIX=2.7.2 BUILD_ARGS="--build-arg BOOT_VERSION=2.7.2 --build-arg BOOT_CHECKSUM=f717ef381f2863a4cad47bf0dcc61e923b3d2afb"
 
-  - RDIR=lein TAG=oracle-8-jre  TAGS="oracle-8 oracle-8u144"                TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
-  - RDIR=lein TAG=oracle-8-jre  TAGS="oracle-8 oracle-8u144"   VARIANT=slim TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
-  - RDIR=lein TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u141"              TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
-  - RDIR=lein TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u141" VARIANT=slim TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
+  - RDIR=lein TAG=oracle-8-jre  TAGS="oracle-8 oracle-8u152"                TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
+  - RDIR=lein TAG=oracle-8-jre  TAGS="oracle-8 oracle-8u152"   VARIANT=slim TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
+  - RDIR=lein TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u151"              TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
+  - RDIR=lein TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u151" VARIANT=slim TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
 
 notifications:
   slack:
