@@ -1,4 +1,4 @@
-FROM ajchemist/openjdk:8u141-jre-alpine
+FROM ajchemist/openjdk:8u151-jre-alpine
 MAINTAINER aJchemist <ajchemist@turingmind.com>
 
 RUN apk add --update --no-cache bash openssh

@@ -31,9 +31,9 @@ env:
   - RDIR=oraclejdk TAG=8-jre TAGS="8 8u152 8u152-jre" VARIANT=slim # require debian:stable-slim
   # - RDIR=oraclejdk TAG=8-jre TAGS="8 8u144 8u144-jre" VARIANT=alpine # require alpine
 
-  - RDIR=openjdk TAG=8-jre TAGS="8 8u141 8u141-jre" LATEST=y # require debian:stable
-  - RDIR=openjdk TAG=8-jre TAGS="8 8u141 8u141-jre" VARIANT=slim # require debian:stable-slim
-  - RDIR=openjdk TAG=8-jre TAGS="8 8u131 8u131-jre" VARIANT=alpine # require debian:stable-slim
+  - RDIR=openjdk TAG=8-jre TAGS="8 8u151 8u151-jre" LATEST=y # require debian:stable
+  - RDIR=openjdk TAG=8-jre TAGS="8 8u151 8u151-jre" VARIANT=slim # require debian:stable-slim
+  - RDIR=openjdk TAG=8-jre TAGS="8 8u151 8u151-jre" VARIANT=alpine # require debian:stable-slim
 
   - RDIR=boot-clj TAG=oracle-8-jre  TAGS="oracle-8 oracle-8u144"                 TAG_PREFIX=2.7.2 BUILD_ARGS="--build-arg BOOT_VERSION=2.7.2 --build-arg BOOT_CHECKSUM=f717ef381f2863a4cad47bf0dcc61e923b3d2afb"
   - RDIR=boot-clj TAG=oracle-8-jre  TAGS="oracle-8 oracle-8u144"  VARIANT=slim   TAG_PREFIX=2.7.2 BUILD_ARGS="--build-arg BOOT_VERSION=2.7.2 --build-arg BOOT_CHECKSUM=f717ef381f2863a4cad47bf0dcc61e923b3d2afb"

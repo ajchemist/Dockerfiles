@@ -1,4 +1,4 @@
-FROM openjdk:8u141-jre
+FROM openjdk:8u151-jre
 MAINTAINER aJchemist <ajchemist@turingmind.com>
 
 # https://hub.docker.com/_/openjdk/
