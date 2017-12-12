@@ -27,8 +27,8 @@ env:
   # - RDIR=debian TAG=stretch
   # - RDIR=debian TAG=stretch-slim
 
-  - RDIR=oraclejdk TAG=8-jre TAGS="8 8u144 8u144-jre" LATEST=y # require debian:stable
-  - RDIR=oraclejdk TAG=8-jre TAGS="8 8u144 8u144-jre" VARIANT=slim # require debian:stable-slim
+  - RDIR=oraclejdk TAG=8-jre TAGS="8 8u152 8u152-jre" LATEST=y # require debian:stable
+  - RDIR=oraclejdk TAG=8-jre TAGS="8 8u152 8u152-jre" VARIANT=slim # require debian:stable-slim
   # - RDIR=oraclejdk TAG=8-jre TAGS="8 8u144 8u144-jre" VARIANT=alpine # require alpine
 
   - RDIR=openjdk TAG=8-jre TAGS="8 8u141 8u141-jre" LATEST=y # require debian:stable
