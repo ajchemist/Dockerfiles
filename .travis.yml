@@ -19,6 +19,8 @@ env:
   # - ADIR=alpine TAG=3.4
   - ADIR=alpine TAG=3.6
   - ADIR=alpine TAG=3.6 VARIANT=openssh
+  - ADIR=alpine TAG=3.7 LATEST=y
+  - ADIR=alpine TAG=3.7 VARIANT=openssh
 
   # - ADIR=debian TAG=jessie
   # - ADIR=debian TAG=jessie-slim
