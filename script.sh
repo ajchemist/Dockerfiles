@@ -11,9 +11,9 @@ selfpath="$selfdir/$(basename "$self")"
 
 function docker_build()
 {
-    cd "${RDIR}/${TAG}${VARIANT:+/$VARIANT}"
+    cd "${ADIR}/${TAG}${VARIANT:+/$VARIANT}"
 
-    REPO="${DOCKER_HUB_USERNAME}/${RDIR}"
+    REPO="${DOCKER_HUB_USERNAME}/${ADIR}"
 
     IMAGE="$REPO:travis${COMMIT:+-$COMMIT}${TRAVIS_JOB_NUMBER:+-$TRAVIS_JOB_NUMBER}"
 
@@ -43,7 +43,7 @@ echo "******" building...
 echo "******"
 
 
-case $RDIR in
+case $ADIR in
     *)
         docker_build
         ;;
@@ -60,8 +60,11 @@ echo "******"
 echo "******" testing...
 echo "******"
 
-case $RDIR in
+case $ADIR in
     oraclejdk)
+        docker run --rm -it $IMAGE -version
+        ;;
+    openjdk)
         docker run --rm -it $IMAGE -version
         ;;
     *)
@@ -80,7 +83,7 @@ echo "******"
 echo "******" pushing...
 echo "******"
 
-case $RDIR in
+case $ADIR in
     *)
         docker_push
         ;;
