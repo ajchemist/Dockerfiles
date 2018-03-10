@@ -1,7 +1,7 @@
-FROM ajchemist/alpine:3.6
+FROM ajchemist/alpine:3.7
 MAINTAINER aJchemist "ajchemist@turingmind.com"
 
-ARG ORACLE_JDK_URL=http://download.oracle.com/otn-pub/java/jdk/8u152-b16/aa0333dd3019491ca4f6ddbe78cdb6d0/server-jre-8u152-linux-x64.tar.gz
+ARG ORACLE_JDK_URL=http://download.oracle.com/otn-pub/java/jdk/8u162-b12/0da788060d494f5095bf8624735fa2f1/server-jre-8u162-linux-x64.tar.gz
 
 RUN apk add --no-cache --update wget \
     && cd /tmp \
