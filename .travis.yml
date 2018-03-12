@@ -17,7 +17,7 @@ env:
   - secure: UgUrUxAwLIzugdaqXOQT5jMQmnSfsOWq0VerFiUdkGlgY1UTqaAWPtnktAqkicYB2Vf1UtFNs095Or2muYMMbWfYW85F8puulESzNi2lXPB03VolqyBKbZGf+StIual/mfyJOKocPfe6sy1a/mD49xMRm/3e2jM11h+BbN1ot0ub/hgCuk4c/8pWz0WPfSqOOyrReiaj7MC6wMI5zy2qPal12h+vYiQ38cbgawcY9jNY4wTCFHfut4whI25cyDWr7jTjhQZJCIHVW5Ii1bBKfjxPK/+y6idQcc70lYajsRaagCJ3uD4V+oXxAaUTeWlGxZvct5CpjhPxBbNz2M3SO149K9lgQM0sn2D5gJGKrzh4PBB0rankVP+L2eUi1rgTHX8pY1jrBTl6qO9zEQV7tcR+LT9ZSvieKLRGyMU40mpfYYOSaHaiY+wUUYvpfSBasWWU+yF6m3ZPoxjT+eVE8+3FbQqyZNaz9mqM8JnZpn9RgPaQLx8ypBCRpZGCCJc4r6WWnpPFzI+W1f80E7srxt9Cd9KCJOBPd6oc47aEadxw41o+ZAmIOCu2/7YWur5e93gBM6A0IaVZ6IDyN3psIia84hfRVA2oS4hn1DgQmNseyPe3K403NrqLnrNP2dCtfDTMyzdlHVzJoPcSVndOQK+Dfy0laqApX7lKyqJlLME=
   matrix:
   # - ADIR=alpine TAG=3.7 LATEST=y
-  # - ADIR=alpine TAG=3.7 VARIANT=openssh
+  - ADIR=alpine TAG=3.7 VARIANT=openssh
 
   # - ADIR=alpine-glibc TAG=3.7
 
