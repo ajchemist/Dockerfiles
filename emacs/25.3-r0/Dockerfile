@@ -7,7 +7,8 @@ RUN apk add --update --no-cache \
     git \
     emacs-nox
 
-COPY emacs_daemon_entry.sh /emacs_daemon_entry.sh
+COPY emacs_daemon_entry.sh /
+RUN chmod +x /emacs_daemon_entry.sh
 
 WORKDIR /root
 ENTRYPOINT ["emacs"]
