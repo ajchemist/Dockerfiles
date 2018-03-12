@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 DAEMON=sshd
+DAEMON_PID_FILE="/var/run/$DAEMON/$DAEMON.pid"
 
 # Fix permissions, if writable
 if [ -w ~/.ssh ]; then
@@ -19,7 +20,7 @@ fi
 
 stop() {
     echo "Received SIGINT or SIGTERM. Shutting down $DAEMON..."
-    pid=$(cat /var/run/$DAEMON/$DAEMON.pid)
+    pid=$(cat $DAEMON_PID_FILE)
     kill -SIGTERM "${pid}"
     wait "${pid}"
     echo "Done."
@@ -31,7 +32,9 @@ pid="$!"
 echo sshd started...
 
 mkdir -p /var/run/$DAEMON
-echo "${pid}" > /var/run/$DAEMON/$DAEMON.pid
+echo "${pid}" > $DAEMON_PID_FILE
+
+export $DAEMON_PID_FILE
 
 if [ $# -gt 0 ]; then
     exec "$@"
