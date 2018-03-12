@@ -21,7 +21,7 @@ env:
 
   # - ADIR=alpine-glibc TAG=3.7
 
-  # - ADIR=emacs TAG=25.3-r0 LATEST=y
+  - ADIR=emacs TAG=25.3-r0 LATEST=y
 
   # - ADIR=debian TAG=jessie
   # - ADIR=debian TAG=jessie-slim
@@ -32,7 +32,7 @@ env:
 
   # - ADIR=oraclejdk TAG=8-jre TAGS="8 8u162 8u162-jre" LATEST=y # require debian:stable
   # - ADIR=oraclejdk TAG=8-jre TAGS="8 8u162 8u162-jre" VARIANT=slim # require debian:stable-slim
-  - ADIR=oraclejdk TAG=8-jre TAGS="8 8u162 8u162-jre" VARIANT=alpine # require alpine
+  # - ADIR=oraclejdk TAG=8-jre TAGS="8 8u162 8u162-jre" VARIANT=alpine # require alpine
 
   # - ADIR=openjdk TAG=8-jre TAGS="8 8u151 8u151-jre" LATEST=y # require debian:stable
   # - ADIR=openjdk TAG=8-jre TAGS="8 8u151 8u151-jre" VARIANT=slim # require debian:stable-slim
