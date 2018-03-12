@@ -10,10 +10,10 @@ fi
 
 # tail -f /dev/stdout
 
-if [ "$(basename $1)" == emacs ]; then
+if [ "$(basename $1 2>/dev/null)" == emacs ]; then
     $@
 else
     emacs $DAEMON_ARG --debug-init
 fi
 
-. /openssh_entry.sh
+exec /openssh_entry.sh
