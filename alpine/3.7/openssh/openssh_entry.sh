@@ -18,21 +18,23 @@ if [ ! -e ~/.ssh/authorized_keys ]; then
 fi
 
 stop() {
-    echo "Received SIGINT or SIGTERM. Shutting down $DAEMON"
+    echo "Received SIGINT or SIGTERM. Shutting down $DAEMON..."
     pid=$(cat /var/run/$DAEMON/$DAEMON.pid)
     kill -SIGTERM "${pid}"
     wait "${pid}"
-    echo Done.
+    echo "Done."
 }
 
-echo sshd started...
 trap stop SIGINT SIGTERM
 /usr/sbin/sshd -D -f /etc/ssh/sshd_config &
 pid="$!"
+echo sshd started...
+
 mkdir -p /var/run/$DAEMON
 echo "${pid}" > /var/run/$DAEMON/$DAEMON.pid
-wait "${pid}" && exit $?
 
 if [ $# -gt 0 ]; then
     exec "$@"
+else
+    wait "${pid}" && exit $?
 fi
