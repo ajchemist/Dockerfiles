@@ -34,7 +34,7 @@ echo sshd started...
 mkdir -p /var/run/$DAEMON
 echo "${pid}" > $DAEMON_PID_FILE
 
-export $DAEMON_PID_FILE
+export DAEMON_PID_FILE
 
 if [ $# -gt 0 ]; then
     exec "$@"
