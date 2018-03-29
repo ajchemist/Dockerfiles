@@ -5,4 +5,5 @@ MAINTAINER aJchemist <ajchemist@turingmind.com>
 RUN apk add --no-cache --update tzdata \
     && cp /usr/share/zoneinfo/Asia/Seoul /etc/localtime \
     && echo Asia/Seoul > /etc/timezone \
-    && apk del tzdata
+    && apk del tzdata \
+    && apk add --no-cache socat

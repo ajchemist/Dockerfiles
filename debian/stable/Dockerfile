@@ -9,6 +9,8 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime \
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends locales \
+    && apt-get install -y socat \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 RUN dpkg-reconfigure locales \
     && /usr/sbin/update-locale LANG=C.UTF-8
