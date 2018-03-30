@@ -1,4 +1,4 @@
-FROM openjdk:8u151-jre-slim
+FROM openjdk:8u162-jre-slim
 MAINTAINER aJchemist <ajchemist@turingmind.com>
 
 RUN ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime \

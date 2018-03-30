@@ -1,4 +1,4 @@
-FROM ajchemist/openjdk:8u151
+FROM ajchemist/openjdk:8u162
 MAINTAINER aJchemist "ajchemist@turingmind.com"
 
 ARG BOOT_VERSION=2.7.2
