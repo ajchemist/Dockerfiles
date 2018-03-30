@@ -17,11 +17,11 @@ env:
   - secure: UgUrUxAwLIzugdaqXOQT5jMQmnSfsOWq0VerFiUdkGlgY1UTqaAWPtnktAqkicYB2Vf1UtFNs095Or2muYMMbWfYW85F8puulESzNi2lXPB03VolqyBKbZGf+StIual/mfyJOKocPfe6sy1a/mD49xMRm/3e2jM11h+BbN1ot0ub/hgCuk4c/8pWz0WPfSqOOyrReiaj7MC6wMI5zy2qPal12h+vYiQ38cbgawcY9jNY4wTCFHfut4whI25cyDWr7jTjhQZJCIHVW5Ii1bBKfjxPK/+y6idQcc70lYajsRaagCJ3uD4V+oXxAaUTeWlGxZvct5CpjhPxBbNz2M3SO149K9lgQM0sn2D5gJGKrzh4PBB0rankVP+L2eUi1rgTHX8pY1jrBTl6qO9zEQV7tcR+LT9ZSvieKLRGyMU40mpfYYOSaHaiY+wUUYvpfSBasWWU+yF6m3ZPoxjT+eVE8+3FbQqyZNaz9mqM8JnZpn9RgPaQLx8ypBCRpZGCCJc4r6WWnpPFzI+W1f80E7srxt9Cd9KCJOBPd6oc47aEadxw41o+ZAmIOCu2/7YWur5e93gBM6A0IaVZ6IDyN3psIia84hfRVA2oS4hn1DgQmNseyPe3K403NrqLnrNP2dCtfDTMyzdlHVzJoPcSVndOQK+Dfy0laqApX7lKyqJlLME=
   matrix:
   # - ADIR=alpine TAG=3.7 LATEST=y
-  - ADIR=alpine TAG=3.7 VARIANT=openssh
+  # - ADIR=alpine TAG=3.7 VARIANT=openssh
 
   # - ADIR=alpine-glibc TAG=3.7
 
-  - ADIR=emacs TAG=25.3-r0 LATEST=y
+  # - ADIR=emacs TAG=25.3-r0 LATEST=y
 
   # - ADIR=debian TAG=jessie
   # - ADIR=debian TAG=jessie-slim
@@ -34,20 +34,20 @@ env:
   # - ADIR=oraclejdk TAG=8-jre TAGS="8 8u162 8u162-jre" VARIANT=slim # require debian:stable-slim
   # - ADIR=oraclejdk TAG=8-jre TAGS="8 8u162 8u162-jre" VARIANT=alpine # require alpine
 
-  # - ADIR=openjdk TAG=8-jre TAGS="8 8u151 8u151-jre" LATEST=y # require debian:stable
-  # - ADIR=openjdk TAG=8-jre TAGS="8 8u151 8u151-jre" VARIANT=slim # require debian:stable-slim
-  # - ADIR=openjdk TAG=8-jre TAGS="8 8u151 8u151-jre" VARIANT=alpine # require debian:stable-slim
+  - ADIR=openjdk TAG=8-jre TAGS="8 8u162 8u162-jre" LATEST=y # require debian:stable
+  - ADIR=openjdk TAG=8-jre TAGS="8 8u162 8u162-jre" VARIANT=slim # require debian:stable-slim
+  - ADIR=openjdk TAG=8-jre TAGS="8 8u162 8u162-jre" VARIANT=alpine # require debian:stable-slim
 
-  # - ADIR=boot-clj TAG=oracle-8-jre  TAGS="oracle-8 oracle-8u152"                 TAG_PREFIX=2.7.2 BUILD_ARGS="--build-arg BOOT_VERSION=2.7.2 --build-arg BOOT_CHECKSUM=f717ef381f2863a4cad47bf0dcc61e923b3d2afb"
-  # - ADIR=boot-clj TAG=oracle-8-jre  TAGS="oracle-8 oracle-8u152"  VARIANT=slim   TAG_PREFIX=2.7.2 BUILD_ARGS="--build-arg BOOT_VERSION=2.7.2 --build-arg BOOT_CHECKSUM=f717ef381f2863a4cad47bf0dcc61e923b3d2afb"
-  # - ADIR=boot-clj TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u151"                TAG_PREFIX=2.7.2 BUILD_ARGS="--build-arg BOOT_VERSION=2.7.2 --build-arg BOOT_CHECKSUM=f717ef381f2863a4cad47bf0dcc61e923b3d2afb"
-  # - ADIR=boot-clj TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u151" VARIANT=slim   TAG_PREFIX=2.7.2 BUILD_ARGS="--build-arg BOOT_VERSION=2.7.2 --build-arg BOOT_CHECKSUM=f717ef381f2863a4cad47bf0dcc61e923b3d2afb"
-  # - ADIR=boot-clj TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u151" VARIANT=alpine TAG_PREFIX=2.7.2 BUILD_ARGS="--build-arg BOOT_VERSION=2.7.2 --build-arg BOOT_CHECKSUM=f717ef381f2863a4cad47bf0dcc61e923b3d2afb"
+  # - ADIR=boot-clj TAG=oracle-8-jre  TAGS="oracle-8 oracle-8u162"                 TAG_PREFIX=2.7.2 BUILD_ARGS="--build-arg BOOT_VERSION=2.7.2 --build-arg BOOT_CHECKSUM=f717ef381f2863a4cad47bf0dcc61e923b3d2afb"
+  # - ADIR=boot-clj TAG=oracle-8-jre  TAGS="oracle-8 oracle-8u162"  VARIANT=slim   TAG_PREFIX=2.7.2 BUILD_ARGS="--build-arg BOOT_VERSION=2.7.2 --build-arg BOOT_CHECKSUM=f717ef381f2863a4cad47bf0dcc61e923b3d2afb"
+  - ADIR=boot-clj TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u162"                TAG_PREFIX=2.7.2 BUILD_ARGS="--build-arg BOOT_VERSION=2.7.2 --build-arg BOOT_CHECKSUM=f717ef381f2863a4cad47bf0dcc61e923b3d2afb"
+  - ADIR=boot-clj TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u162" VARIANT=slim   TAG_PREFIX=2.7.2 BUILD_ARGS="--build-arg BOOT_VERSION=2.7.2 --build-arg BOOT_CHECKSUM=f717ef381f2863a4cad47bf0dcc61e923b3d2afb"
+  - ADIR=boot-clj TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u162" VARIANT=alpine TAG_PREFIX=2.7.2 BUILD_ARGS="--build-arg BOOT_VERSION=2.7.2 --build-arg BOOT_CHECKSUM=f717ef381f2863a4cad47bf0dcc61e923b3d2afb"
 
-  # - ADIR=lein TAG=oracle-8-jre  TAGS="oracle-8 oracle-8u152"                TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
-  # - ADIR=lein TAG=oracle-8-jre  TAGS="oracle-8 oracle-8u152"   VARIANT=slim TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
-  # - ADIR=lein TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u151"              TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
-  # - ADIR=lein TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u151" VARIANT=slim TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
+  # - ADIR=lein TAG=oracle-8-jre  TAGS="oracle-8 oracle-8u162"                TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
+  # - ADIR=lein TAG=oracle-8-jre  TAGS="oracle-8 oracle-8u162"   VARIANT=slim TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
+  - ADIR=lein TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u162"              TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
+  - ADIR=lein TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u162" VARIANT=slim TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
 
 notifications:
   slack:
