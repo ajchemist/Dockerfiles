@@ -25,6 +25,10 @@ function docker_build()
     do
         docker tag $IMAGE $REPO:${TAG_PREFIX:+$TAG_PREFIX-}${_tag}${VARIANT:+-$VARIANT}${TAG_SUFFIX:+-$TAG_SUFFIX}
     done
+    for _hottag in ${HOTTAGS}
+    do
+        docker tag $IMAGE $REPO:${_hottag}
+    done
     if [ ! -z $LATEST ]; then
         LATEST_TAG=$(if [ "$TRAVIS_BRANCH" == "master" ]; then echo latest; else echo $TRAVIS_BRANCH; fi)
         docker tag $IMAGE $REPO:$LATEST_TAG${VARIANT:+-$VARIANT}

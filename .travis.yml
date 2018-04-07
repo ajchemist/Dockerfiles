@@ -34,9 +34,9 @@ env:
   # - ADIR=oraclejdk TAG=8-jre TAGS="8 8u162 8u162-jre" VARIANT=slim # require debian:stable-slim
   # - ADIR=oraclejdk TAG=8-jre TAGS="8 8u162 8u162-jre" VARIANT=alpine # require alpine
 
-  - ADIR=openjdk TAG=8-jre TAGS="8 8u162 8u162-jre" LATEST=y # require debian:stable
-  - ADIR=openjdk TAG=8-jre TAGS="8 8u162 8u162-jre" VARIANT=slim # require debian:stable-slim
-  - ADIR=openjdk TAG=8-jre TAGS="8 8u162 8u151-jre" VARIANT=alpine # require debian:stable-slim
+  # - ADIR=openjdk TAG=8-jre TAGS="8 8u162 8u162-jre" LATEST=y # require debian:stable
+  # - ADIR=openjdk TAG=8-jre TAGS="8 8u162 8u162-jre" VARIANT=slim # require debian:stable-slim
+  # - ADIR=openjdk TAG=8-jre TAGS="8 8u162 8u151-jre" VARIANT=alpine # require debian:stable-slim
 
   # - ADIR=boot-clj TAG=oracle-8-jre  TAGS="oracle-8 oracle-8u162"                 TAG_PREFIX=2.7.2 BUILD_ARGS="--build-arg BOOT_VERSION=2.7.2 --build-arg BOOT_CHECKSUM=f717ef381f2863a4cad47bf0dcc61e923b3d2afb"
   # - ADIR=boot-clj TAG=oracle-8-jre  TAGS="oracle-8 oracle-8u162"  VARIANT=slim   TAG_PREFIX=2.7.2 BUILD_ARGS="--build-arg BOOT_VERSION=2.7.2 --build-arg BOOT_CHECKSUM=f717ef381f2863a4cad47bf0dcc61e923b3d2afb"
@@ -46,8 +46,12 @@ env:
 
   # - ADIR=lein TAG=oracle-8-jre  TAGS="oracle-8 oracle-8u162"                TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
   # - ADIR=lein TAG=oracle-8-jre  TAGS="oracle-8 oracle-8u162"   VARIANT=slim TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
-  - ADIR=lein TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u162"              TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
-  - ADIR=lein TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u162" VARIANT=slim TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
+  # - ADIR=lein TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u162"              TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
+  # - ADIR=lein TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u162" VARIANT=slim TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
+
+  - ADIR=clojure HOTTAGS="1.9.0" TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u162"                TAG_PREFIX=1.9.0 BUILD_ARGS="--build-arg CLOJURE_VERSION=1.9.0"
+  - ADIR=clojure HOTTAGS="1.9.0" TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u162" VARIANT=slim   TAG_PREFIX=1.9.0 BUILD_ARGS="--build-arg CLOJURE_VERSION=1.9.0"
+  - ADIR=clojure HOTTAGS="1.9.0" TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u151" VARIANT=alpine TAG_PREFIX=1.9.0 BUILD_ARGS="--build-arg CLOJURE_VERSION=1.9.0"
 
 notifications:
   slack:
