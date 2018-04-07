@@ -3,6 +3,7 @@ MAINTAINER aJchemist "ajchemist@turingmind.com"
 
 # http://clojure.org/community/downloads
 
+ARG CLOJURE_VERSION=1.9.0
 ARG LINUX_INSTALL_SCRIPT=linux-install-1.9.0.358.sh
 
 RUN apt-get update \
