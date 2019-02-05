@@ -1,9 +1,9 @@
-FROM ajchemist/openjdk:8u181-slim
+FROM openjdk:8u181-slim-stretch
 LABEL maintainer "aJchemist <valchemist@me.com>"
 # http://clojure.org/community/downloads
 
 
-ARG LINUX_INSTALL_SCRIPT=linux-install-1.9.0.394.sh
+ARG LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.411.sh
 
 
 RUN apt-get update \
@@ -11,10 +11,13 @@ RUN apt-get update \
     && apt-get clean
 
 
-RUN curl -O https://download.clojure.org/install/$LINUX_INSTALL_SCRIPT \
-    && chmod +x $LINUX_INSTALL_SCRIPT \
-    && ./$LINUX_INSTALL_SCRIPT \
-    && rm $LINUX_INSTALL_SCRIPT
+RUN curl -o linux-install.sh $LINUX_INSTALL_SCRIPT_URL \
+    && chmod +x linux-install.sh \
+    && ./linux-install.sh \
+    && rm linux-install.sh
+
+
+RUN clojure -e "(clojure-version)"
 
 
 ENTRYPOINT ["clojure"]

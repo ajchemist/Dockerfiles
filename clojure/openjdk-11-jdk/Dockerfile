@@ -1,4 +1,4 @@
-FROM openjdk:8u181-jre-stretch
+FROM openjdk:11.0.1-jdk-stretch
 LABEL maintainer "aJchemist <valchemist@me.com>"
 # http://clojure.org/community/downloads
 
