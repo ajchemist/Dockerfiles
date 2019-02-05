@@ -8,7 +8,7 @@ ARG LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-
 
 RUN set -eux; \
     yum install -y rlwrap \
-    rm -rf /var/cache/yum
+    && rm -rf /var/cache/yum
 
 
 RUN curl -o linux-install.sh $LINUX_INSTALL_SCRIPT_URL \
