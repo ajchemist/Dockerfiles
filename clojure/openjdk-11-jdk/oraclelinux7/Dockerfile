@@ -7,7 +7,8 @@ ARG LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-
 
 
 RUN set -eux; \
-    yum install -y rlwrap \
+    rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
+    && yum install -y rlwrap \
     && rm -rf /var/cache/yum
 
 
