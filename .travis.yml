@@ -11,10 +11,6 @@ before_install:
   - env | sort
 
 
-script:
-  - travis_retry ./script.sh
-
-
 after_success:
   - docker images
 
@@ -66,17 +62,26 @@ env:
     # - ADIR=lein TAG=openjdk-8-jre TAGS="openjdk-8 openjdk-8u162" VARIANT=slim TAG_PREFIX=2.7.1 BUILD_ARGS="--build-arg LEIN_VERSION=2.7.1"
 
 
-    - ADIR=clojure TAG=openjdk-8-jre HOTTAGS="tools-deps openjdk-8-tools-deps 1.10.0 1.10.0.414" TAGS="openjdk-8 openjdk-8u181 8u181" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.414.sh"
-    - ADIR=clojure TAG=openjdk-8-jre VARIANT=slim HOTTAGS="tools-deps-slim openjdk-8-tools-deps-slim 1.10.0-slim 1.10.0.414-slim" TAGS="openjdk-8 openjdk-8u181 8u181"  BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.414.sh"
-    - ADIR=clojure TAG=openjdk-8-jre VARIANT=alpine HOTTAGS="tools-deps-alpine openjdk-8-tools-deps-alpine 1.10.0-alpine 1.10.0.414-alpine" TAGS="openjdk-8 openjdk-8u191 8u191" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.414.sh"
-    - ADIR=clojure TAG=openjdk-11-jre HOTTAGS="openjdk-11-tools-deps openjdk-11-1.10.0 openjdk-11-1.10.0.414" TAGS="openjdk-11 openjdk-11.0.2 11.0.2" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.414.sh"
-    - ADIR=clojure TAG=openjdk-11-jre VARIANT=slim HOTTAGS="openjdk-11-tools-deps-slim openjdk-11-1.10.0-slim openjdk-11-1.10.0.414-slim" TAGS="openjdk-11 openjdk-11.0.2 11.0.2"  BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.414.sh"
-    - ADIR=clojure TAG=openjdk-11-jdk HOTTAGS="openjdk-11-jdk-tools-deps openjdk-11-jdk-1.10.0 openjdk-11-jdk-1.10.0.414" TAGS="openjdk-11-jdk 11.0.2-jdk" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.414.sh"
-    - ADIR=clojure TAG=openjdk-11-jdk VARIANT=slim HOTTAGS="openjdk-11-jdk-tools-deps-slim openjdk-11-jdk-1.10.0-slim openjdk-11-jdk-1.10.0.414-slim" TAGS="openjdk-11-jdk 11.0.2-jdk"  BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.414.sh"
-    - ADIR=clojure TAG=openjdk-11-jdk VARIANT=oraclelinux7 HOTTAGS="openjdk-11-jdk-tools-deps-oraclelinux7 openjdk-11-jdk-1.10.0-oraclelinux7 openjdk-11-jdk-1.10.0.414-oraclelinux7" TAGS="openjdk-11-jdk 11.0.2-jdk"  BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.414.sh"
+    # - ADIR=clojure TAG=openjdk-8-jre HOTTAGS="tools-deps openjdk-8-tools-deps 1.10.0 1.10.0.414" TAGS="openjdk-8 openjdk-8u181 8u181" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.414.sh"
+    # - ADIR=clojure TAG=openjdk-8-jre VARIANT=slim HOTTAGS="tools-deps-slim openjdk-8-tools-deps-slim 1.10.0-slim 1.10.0.414-slim" TAGS="openjdk-8 openjdk-8u181 8u181"  BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.414.sh"
+    # - ADIR=clojure TAG=openjdk-8-jre VARIANT=alpine HOTTAGS="tools-deps-alpine openjdk-8-tools-deps-alpine 1.10.0-alpine 1.10.0.414-alpine" TAGS="openjdk-8 openjdk-8u191 8u191" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.414.sh"
+    # - ADIR=clojure TAG=openjdk-11-jre HOTTAGS="openjdk-11-tools-deps openjdk-11-1.10.0 openjdk-11-1.10.0.414" TAGS="openjdk-11 openjdk-11.0.2 11.0.2" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.414.sh"
+    # - ADIR=clojure TAG=openjdk-11-jre VARIANT=slim HOTTAGS="openjdk-11-tools-deps-slim openjdk-11-1.10.0-slim openjdk-11-1.10.0.414-slim" TAGS="openjdk-11 openjdk-11.0.2 11.0.2"  BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.414.sh"
+    # - ADIR=clojure TAG=openjdk-11-jdk HOTTAGS="openjdk-11-jdk-tools-deps openjdk-11-jdk-1.10.0 openjdk-11-jdk-1.10.0.414" TAGS="openjdk-11-jdk 11.0.2-jdk" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.414.sh"
+    # - ADIR=clojure TAG=openjdk-11-jdk VARIANT=slim HOTTAGS="openjdk-11-jdk-tools-deps-slim openjdk-11-jdk-1.10.0-slim openjdk-11-jdk-1.10.0.414-slim" TAGS="openjdk-11-jdk 11.0.2-jdk"  BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.414.sh"
+    # - ADIR=clojure TAG=openjdk-11-jdk VARIANT=oraclelinux7 HOTTAGS="openjdk-11-jdk-tools-deps-oraclelinux7 openjdk-11-jdk-1.10.0-oraclelinux7 openjdk-11-jdk-1.10.0.414-oraclelinux7" TAGS="openjdk-11-jdk 11.0.2-jdk"  BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.414.sh"
 
 
     # - ADIR=nginx TAG=stable TAGS="1.14.2 1.14"
+
+
+jobs:
+  include:
+    - stage: build
+      script: travis_retry ./script.sh
+    - script:
+      - echo Hello, World
+
 
 
 notifications:
