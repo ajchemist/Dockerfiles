@@ -11,6 +11,9 @@ before_install:
   - env | sort
 
 
+script: travis_retry ./script.sh
+
+
 after_success:
   - docker images
 
@@ -75,12 +78,12 @@ env:
     # - ADIR=nginx TAG=stable TAGS="1.14.2 1.14"
 
 
-jobs:
+.jobs:
   include:
-    - stage: build
-      script: travis_retry ./script.sh
-    - script:
-      - echo Hello, World
+    - stage: another-test
+      script:
+        - uname -a
+        - echo Hello, World
 
 
 notifications:
