@@ -1,10 +1,13 @@
 FROM nginx:stable
 
 
-LABEL maintainer="aJchemist <ajchemist@turingmind.com>"
+LABEL maintainer="aJchemist <1694505+aJchemist@users.noreply.github.com>"
 
 
 ENV DEBIAN_FRONTEND noninteractive
+
+
+COPY nginx.conf /etc/nginx/nginx.conf
 
 
 RUN ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime \
@@ -12,19 +15,14 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime \
     && date
 
 
-RUN apt-get update
-
-
-RUN apt-get install -y locales \
+RUN apt-get update \
+    && apt-get install -y curl locales \
     && dpkg-reconfigure locales \
     && locale-gen C.UTF-8 \
     && /usr/sbin/update-locale LANG=C.UTF-8
 
 
 RUN apt-get install -y apache2-utils
-
-
-COPY nginx.conf /etc/nginx/nginx.conf
 
 
 ENV LANG     C.UTF-8

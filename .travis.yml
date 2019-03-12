@@ -24,8 +24,8 @@ env:
     - secure: X0zpr2Fd5pJqciC9JwXZxYcYmGLcX00mdAasS/Kh8nPOd8f0AaIMk23ZbAXE6UEBvVnlzQaUOpw+JgNbCQqTn9nLQbpWtL2VwcH7jaqSoc1SXFaef97pwq35mvtxJ6wg/WKaUnmYzUjSbdIZqky0pGI2OiWPQUBv1TpteHFX14eZL7WBjd/x5WSFAfpBZ678zdszl6JeUEpOGUl/cGqCbaFmZwxzLJ8ay1vKZT8IWLnAV51Ntg6fQrpJp6xZR+qyjezUPv8wkjAQAhtqPzqzpZ6N/7yKiHskwfg3ihq+d8CmQp4pzwqIy/uS/QAf9b8XFHDER2+2l7C0fGan45FizUjYoEJ1KuOKbNoew/ZjjtsSjaoH8tZzAm0HI2JpWsd9pxoKN0k35cPCLQxTXFa80on/k3N5rMcAABUbiWfGhjmoI5dkvcEzOiIxzxQGby164512w5ULSAlBXdAEACBW6DnN9k8FKQHa4r7Ed+QMO8WY2hCPACK0+dOjvwt2w0TZX4nIsiDWCNGy4F8+MGQuSiwkpYhhAXbovbDx1jFYWjh2EIjTKtWyCNvqlQ/dG4DNjNlAW2dbmIRm7iwTMMwPDR/wmNvLPIm5ifyU3Nrs2Dz4mWJLTVI1oQXHKY38VMLi48iLcf2gznUt4z85sWYsyEYuJn9uhzbM4OwPyiikxE0=
     - secure: UgUrUxAwLIzugdaqXOQT5jMQmnSfsOWq0VerFiUdkGlgY1UTqaAWPtnktAqkicYB2Vf1UtFNs095Or2muYMMbWfYW85F8puulESzNi2lXPB03VolqyBKbZGf+StIual/mfyJOKocPfe6sy1a/mD49xMRm/3e2jM11h+BbN1ot0ub/hgCuk4c/8pWz0WPfSqOOyrReiaj7MC6wMI5zy2qPal12h+vYiQ38cbgawcY9jNY4wTCFHfut4whI25cyDWr7jTjhQZJCIHVW5Ii1bBKfjxPK/+y6idQcc70lYajsRaagCJ3uD4V+oXxAaUTeWlGxZvct5CpjhPxBbNz2M3SO149K9lgQM0sn2D5gJGKrzh4PBB0rankVP+L2eUi1rgTHX8pY1jrBTl6qO9zEQV7tcR+LT9ZSvieKLRGyMU40mpfYYOSaHaiY+wUUYvpfSBasWWU+yF6m3ZPoxjT+eVE8+3FbQqyZNaz9mqM8JnZpn9RgPaQLx8ypBCRpZGCCJc4r6WWnpPFzI+W1f80E7srxt9Cd9KCJOBPd6oc47aEadxw41o+ZAmIOCu2/7YWur5e93gBM6A0IaVZ6IDyN3psIia84hfRVA2oS4hn1DgQmNseyPe3K403NrqLnrNP2dCtfDTMyzdlHVzJoPcSVndOQK+Dfy0laqApX7lKyqJlLME=
   matrix:
-    - ADIR=alpine TAG=3.9 LATEST=y
-    - ADIR=alpine TAG=3.9 VARIANT=openssh
+    # - ADIR=alpine TAG=3.9 LATEST=y
+    # - ADIR=alpine TAG=3.9 VARIANT=openssh
 
 
     # - ADIR=alpine-glibc TAG=3.8
@@ -75,7 +75,8 @@ env:
     # - ADIR=clojure TAG=openjdk-11-jdk VARIANT=oraclelinux7 HOTTAGS="openjdk-11-jdk-tools-deps-oraclelinux7 openjdk-11-jdk-1.10.0-oraclelinux7 openjdk-11-jdk-1.10.0.414-oraclelinux7" TAGS="openjdk-11-jdk 11.0.2-jdk"  BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.414.sh"
 
 
-    # - ADIR=nginx TAG=stable TAGS="1.14.2 1.14"
+    - ADIR=nginx TAG=stable TAGS="1.14.2 1.14"
+    - ADIR=nginx TAG=stable-alpine TAGS="1.14.2-alpine 1.14-alpine"
 
 
 .jobs:
