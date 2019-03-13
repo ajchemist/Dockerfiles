@@ -78,7 +78,7 @@ env:
     # - ADIR=nginx TAG=stable TAGS="1.14.2 1.14"
     # - ADIR=nginx TAG=stable-alpine TAGS="1.14.2-alpine 1.14-alpine"
     - REPO=ajchemist/nginx DOCKERFILE_PATH=nginx/stable-alpine/brotli TAGS="stable-alpine-brotli 1.14.2-brotli 1.14-brotli"
-    # - REPO=ajchemist/nginx DOCKERFILE_PATH=nginx/stable-alpine/dav-ext TAGS="stable-alpine-dav-ext 1.14.2-dav-ext 1.14-dav-ext"
+    - REPO=ajchemist/nginx DOCKERFILE_PATH=nginx/stable-alpine/dav-ext TAGS="stable-alpine-dav-ext 1.14.2-dav-ext 1.14-dav-ext"
 
 
 .jobs:
