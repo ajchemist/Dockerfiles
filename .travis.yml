@@ -75,8 +75,10 @@ env:
     # - ADIR=clojure TAG=openjdk-11-jdk VARIANT=oraclelinux7 HOTTAGS="openjdk-11-jdk-tools-deps-oraclelinux7 openjdk-11-jdk-1.10.0-oraclelinux7 openjdk-11-jdk-1.10.0.414-oraclelinux7" TAGS="openjdk-11-jdk 11.0.2-jdk"  BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.414.sh"
 
 
-    - ADIR=nginx TAG=stable TAGS="1.14.2 1.14"
-    - ADIR=nginx TAG=stable-alpine TAGS="1.14.2-alpine 1.14-alpine"
+    # - ADIR=nginx TAG=stable TAGS="1.14.2 1.14"
+    # - ADIR=nginx TAG=stable-alpine TAGS="1.14.2-alpine 1.14-alpine"
+    - REPO=ajchemist/nginx DOCKERFILE_PATH=nginx/stable-alpine/brotli TAGS="stable-alpine-brotli 1.14.2-brotli 1.14-brotli"
+    # - REPO=ajchemist/nginx DOCKERFILE_PATH=nginx/stable-alpine/dav-ext TAGS="stable-alpine-dav-ext 1.14.2-dav-ext 1.14-dav-ext"
 
 
 .jobs:
