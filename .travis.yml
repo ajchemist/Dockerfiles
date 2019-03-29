@@ -32,7 +32,8 @@ env:
 
 
     # - ADIR=emacs TAG=26.1 TAGS="26.1-r0" LATEST=y
-    - REPO=ajchemist/emacs DOCKERFILE_PATH=emacs/26.1-org-mind-map TAGS="org-mind-map 26.1-org-mind-map"
+    # - REPO=ajchemist/emacs DOCKERFILE_PATH=emacs/26.1-org-mind-map TAGS="org-mind-map 26.1-org-mind-map"
+
 
     # - ADIR=debian TAG=jessie
     # - ADIR=debian TAG=jessie-slim
@@ -82,6 +83,9 @@ env:
 
 
     # - REPO=ajchemist/syslog-ng DOCKERFILE_PATH=syslog-ng TAGS="alpine 3.19.1" LATEST=y
+
+
+    - REPO=ajchemist/chromium DOCKERFILE_PATH=chromium/72/alpine TAGS="alpine 72-alpine" LATEST=y
 
 
 .jobs:
