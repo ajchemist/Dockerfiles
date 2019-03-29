@@ -85,7 +85,8 @@ env:
     # - REPO=ajchemist/syslog-ng DOCKERFILE_PATH=syslog-ng TAGS="alpine 3.19.1" LATEST=y
 
 
-    - REPO=ajchemist/chromium DOCKERFILE_PATH=chromium/72/alpine TAGS="alpine 72-alpine" LATEST=y
+    # - REPO=ajchemist/chromium DOCKERFILE_PATH=chromium/72/alpine TAGS="alpine 72-alpine" LATEST=y
+    - REPO=ajchemist/node DOCKERFILE_PATH=node/lts-alpine/chromium/72 TAGS="lts-alpine-chromium lts-alpine-chromium-72 10.15.3-alpine-chromium 10.15.3-alpine-chromium-72"
 
 
 .jobs:
