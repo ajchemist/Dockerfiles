@@ -1,4 +1,4 @@
-FROM openjdk:8u201-alpine3.9
+FROM openjdk:8u212-jre-alpine3.9
 LABEL maintainer "aJchemist <valchemist@me.com>"
 # http://clojure.org/community/downloads
 

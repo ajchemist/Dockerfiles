@@ -1,9 +1,9 @@
-FROM openjdk:8u181-jre-stretch
+FROM openjdk:8u212-jre-stretch
 LABEL maintainer "aJchemist <valchemist@me.com>"
 # http://clojure.org/community/downloads
 
 
-ARG LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.414.sh
+ARG LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.0.442.sh
 
 
 RUN apt-get update \
