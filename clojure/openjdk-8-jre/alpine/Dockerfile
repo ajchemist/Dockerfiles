@@ -3,7 +3,7 @@ LABEL maintainer "aJchemist <valchemist@me.com>"
 # http://clojure.org/community/downloads
 
 
-ARG LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.469.sh
+ARG LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.536.sh
 
 
 RUN apk add --no-cache --update bash openssl curl \
