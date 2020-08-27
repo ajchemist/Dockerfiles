@@ -27,6 +27,8 @@ env:
   matrix:
     # - ADIR=alpine TAG=3.11 LATEST=y
     # - ADIR=alpine TAG=3.11 VARIANT=openssh
+    - ADIR=alpine TAG=3.12 LATEST=y
+    - ADIR=alpine TAG=3.12 VARIANT=openssh
 
 
     # - ADIR=alpine-glibc TAG=3.8
@@ -77,9 +79,9 @@ env:
     # - ADIR=clojure TAG=openjdk-11-jdk VARIANT=oraclelinux7 HOTTAGS="openjdk-11-jdk-tools-deps-oraclelinux7 openjdk-11-jdk-1.10.0-oraclelinux7 openjdk-11-jdk-1.10.1.469-oraclelinux7" TAGS="openjdk-11-jdk 11.0.2-jdk"  BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.469.sh"
 
 
-    - ADIR=clojure-cli TAG=openjre VARIANT=11-jre-slim HOTTAGS="1.10 1.10.1 1.10.1.561 1.10-openjre" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.561.sh"
-    - ADIR=clojure-cli TAG=openjdk VARIANT=11-jdk-slim HOTTAGS="1.10-openjdk 1.10.1-openjdk 1.10.1.561-openjdk" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.561.sh"
-    - ADIR=clojure-cli TAG=graalvm-ce HOTTAGS="1.10-graalvm-ce 1.10.1-graalvm-ce 1.10.1.561-graalvm-ce" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.561.sh"
+    # - ADIR=clojure-cli TAG=openjre VARIANT=11-jre-slim HOTTAGS="1.10 1.10.1 1.10.1.561 1.10-openjre" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.561.sh"
+    # - ADIR=clojure-cli TAG=openjdk VARIANT=11-jdk-slim HOTTAGS="1.10-openjdk 1.10.1-openjdk 1.10.1.561-openjdk" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.561.sh"
+    # - ADIR=clojure-cli TAG=graalvm-ce HOTTAGS="1.10-graalvm-ce 1.10.1-graalvm-ce 1.10.1.561-graalvm-ce" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.561.sh"
 
 
     # - ADIR=nginx TAG=stable TAGS="1.14.2 1.14"
@@ -109,3 +111,8 @@ notifications:
       - secure: yGzvUZUD8YZ4yPtWth1ynbQ25voXbdKnOnOPSRt59n3aLdSoOt1jVU6ZQUTZ26Eb5hW9z5tqFtrh1tBCJpJkWDGdLJnJRaNa6Si01E17aICxL11uXEK0sahOj3L8/jQIXrSFJKGr75460q33B4aO1l0zGCHsWGL1Kcs+ZqyxeR5afmX4OghpvmyAvHbl9k4ugXdTIbMLwv01qm0HYvJcCzLqU07pY35hN/xPIP1xmt5syFE6jSLfHXKKQk++JcT+JnpMXpmSAuDGBh5fDs6eya5rfx7zuDllooRQ2tXVh1PTyJkfH6ggnPH4U5Tj+ENLseOaWR0emf8cmFAwbUa2Ebg4Z0jM9uaFnKfPw53eIdkQqQq/jlzBuNQ3PwilwdJBYR8X0kVTjDgW2IPLxuiIFW5yPbDG/Ys5rNyhvi92ujjy8pNJzGaZJp8tF4sBxNMB/Ycx1l11CMbAy8q+SJsmAgdXfSFBOj/bgSOd1F97jXhkAOJ9N4bq/0ZeXvVnLRMQ5uZnMuEpsDqBkt+izFl283lnyKcrLXwQ7JDQtAloH5EpXTu40QoJT2k8Y+9MkQSAhlRAQsZuh3BWo+N40Llaeh+YBGMg245r2jgzA7isz9mt6nnrg0DT3RwCC0kbPDn6o7TCnMpceJgqfRyKXE4dnkQYqVrCtj3uIo5TqtCPtWY=
     on_success: always
     on_failure: always
+
+
+# Local Variables:
+# mode: yaml
+# End:
