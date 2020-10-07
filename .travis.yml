@@ -27,8 +27,8 @@ env:
   matrix:
     # - ADIR=alpine TAG=3.11 LATEST=y
     # - ADIR=alpine TAG=3.11 VARIANT=openssh
-    - ADIR=alpine TAG=3.12 LATEST=y
-    - ADIR=alpine TAG=3.12 VARIANT=openssh
+    # - ADIR=alpine TAG=3.12 LATEST=y
+    # - ADIR=alpine TAG=3.12 VARIANT=openssh
 
 
     # - ADIR=alpine-glibc TAG=3.8
@@ -36,6 +36,8 @@ env:
 
     # - ADIR=emacs TAG=26.3 LATEST=y
     # - REPO=ajchemist/emacs DOCKERFILE_PATH=emacs/26.3-org-mind-map TAGS="org-mind-map 26.3-org-mind-map"
+    # - ADIR=emacs TAG=27.1 LATEST=y
+    # - REPO=ajchemist/emacs DOCKERFILE_PATH=emacs/27.1-org-mind-map TAGS="org-mind-map 27.1-org-mind-map"
 
 
     # - ADIR=debian TAG=jessie
@@ -79,9 +81,9 @@ env:
     # - ADIR=clojure TAG=openjdk-11-jdk VARIANT=oraclelinux7 HOTTAGS="openjdk-11-jdk-tools-deps-oraclelinux7 openjdk-11-jdk-1.10.0-oraclelinux7 openjdk-11-jdk-1.10.1.469-oraclelinux7" TAGS="openjdk-11-jdk 11.0.2-jdk"  BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.469.sh"
 
 
-    # - ADIR=clojure-cli TAG=openjre VARIANT=11-jre-slim HOTTAGS="1.10 1.10.1 1.10.1.561 1.10-openjre" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.561.sh"
+    # - ADIR=clojure-cli TAG=openjre VARIANT=11-jre-slim HOTTAGS="1.10 1.10.1 1.10.1.697 1.10-openjre" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.697.sh"
     # - ADIR=clojure-cli TAG=openjdk VARIANT=11-jdk-slim HOTTAGS="1.10-openjdk 1.10.1-openjdk 1.10.1.561-openjdk" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.561.sh"
-    # - ADIR=clojure-cli TAG=graalvm-ce HOTTAGS="1.10-graalvm-ce 1.10.1-graalvm-ce 1.10.1.561-graalvm-ce" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.561.sh"
+    - ADIR=clojure-cli TAG=graalvm-ce HOTTAGS="1.10-graalvm-ce 1.10.1-graalvm-ce 1.10.1.697-graalvm-ce" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.697.sh"
 
 
     # - ADIR=nginx TAG=stable TAGS="1.14.2 1.14"
