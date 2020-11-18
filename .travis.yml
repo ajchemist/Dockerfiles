@@ -83,7 +83,7 @@ env:
 
     # - ADIR=clojure-cli TAG=openjre VARIANT=11-jre-slim HOTTAGS="1.10 1.10.1 1.10.1.697 1.10-openjre" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.697.sh"
     # - ADIR=clojure-cli TAG=openjdk VARIANT=11-jdk-slim HOTTAGS="1.10-openjdk 1.10.1-openjdk 1.10.1.561-openjdk" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.561.sh"
-    - ADIR=clojure-cli TAG=graalvm-ce HOTTAGS="1.10-graalvm-ce 1.10.1-graalvm-ce 1.10.1.697-graalvm-ce" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.697.sh"
+    - ADIR=clojure-cli TAG=graalvm-ce HOTTAGS="graalvm-ce-20.3 1.10-graalvm-ce 1.10.1-graalvm-ce 1.10.1.727-graalvm-ce" BUILD_ARGS="--build-arg LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.727.sh"
 
 
     # - ADIR=nginx TAG=stable TAGS="1.14.2 1.14"

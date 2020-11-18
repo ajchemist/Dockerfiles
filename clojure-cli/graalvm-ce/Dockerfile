@@ -1,11 +1,11 @@
-FROM docker.pkg.github.com/graalvm/container/community:ol8-java11-20.2.0
+FROM docker.pkg.github.com/graalvm/container/community:ol8-java11-20.3.0
 
 
 LABEL maintainer "ajchemist <valchemist@me.com>"
 
 
 # http://clojure.org/community/downloads
-ARG LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.697.sh
+ARG LINUX_INSTALL_SCRIPT_URL=https://download.clojure.org/install/linux-install-1.10.1.727.sh
 
 
 RUN curl -o linux-install.sh $LINUX_INSTALL_SCRIPT_URL \
